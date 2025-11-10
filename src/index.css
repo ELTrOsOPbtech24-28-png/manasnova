@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  * {
+    @apply scroll-smooth;
+    cursor: default !important;
+  }
+
+  button, a, [role="button"], [onclick] {
+    cursor: pointer !important;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold shadow-lg transition-all duration-200;
+  }
+  
+  .btn-primary:hover {
+    @apply shadow-xl;
+  }
+  
+  
+  .btn-secondary {
+    @apply px-8 py-4 bg-white text-gray-700 border-2 border-gray-300 rounded-lg font-semibold hover:border-purple-600 hover:text-purple-600 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-md transition-shadow duration-200;
+  }
+
+  .card:hover {
+    @apply shadow-lg;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white to-purple-50 rounded-xl shadow-md transition-shadow duration-200;
+  }
+
+  .card-gradient:hover {
+    @apply shadow-lg;
+  }
+  
+  .glass {
+    @apply bg-white/90 backdrop-blur-md border border-gray-200 shadow-md;
+  }
+
+  .glass-strong {
+    @apply bg-white/80 backdrop-blur-lg border border-gray-300 shadow-lg;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-zen-600 to-accent-600;
+  }
+  
+  .text-gradient-calm {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-calm-600 via-primary-600 to-zen-600;
+  }
+
+  .text-gradient-rainbow {
+    @apply bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+  }
+  
+  .bg-mesh {
+    background-image: 
+      radial-gradient(at 40% 20%, rgba(14, 165, 233, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(217, 70, 239, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+  }
+
+  .gradient-mesh {
+    background: radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(6, 182, 212, 0.3) 0px, transparent 50%);
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(14, 165, 233, 0.3);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3), 0 0 20px rgba(14, 165, 233, 0.2);
+  }
+  
+  .glow-hover:hover {
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.4), 0 0 50px rgba(217, 70, 239, 0.3);
+  }
+
+  .backdrop-blur-extreme {
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    backdrop-filter: blur(40px) saturate(180%);
+  }
+}
+
+/* Meditation Orb Animations - Simplified */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.15);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
