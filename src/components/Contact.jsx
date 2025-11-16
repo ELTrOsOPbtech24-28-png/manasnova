@@ -32,7 +32,7 @@ const Contact = () => {
       id="contact" 
       className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.77), rgba(31, 41, 55, 0.87)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070')`,
+        backgroundImage: `linear-gradient(rgba(167, 139, 250, 0.2), rgba(192, 132, 252, 0.25)), url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=2070')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -42,11 +42,11 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6 drop-shadow-lg">
               Ready to Begin Your
-              <span className="text-purple-300"> Spiritual Awakening? ✨</span>
+              <span className="text-pink-600"> Spiritual Awakening? ✨</span>
             </h2>
-            <p className="text-lg text-purple-100 mb-8 leading-relaxed">
+            <p className="text-lg text-purple-800 mb-8 leading-relaxed drop-shadow-md font-medium">
               Join ManasNova today and experience divine AI-powered guidance for enlightenment, sacred focus, and spiritual self-growth. Begin your journey for free and transform your soul. 🕉️
             </p>
 
@@ -86,7 +86,7 @@ const Contact = () => {
           {/* Right Content - Contact Form */}
           <div className="bg-gray-900/60 backdrop-blur-xl p-10 rounded-3xl shadow-2xl border-2 border-purple-500/30 hover:border-purple-400/60 transition-all">
             <div className="flex items-center space-x-4 mb-8">
-              <div className="p-4 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 rounded-2xl shadow-lg shadow-purple-500/50">
+              <div className="p-4 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 rounded-2xl shadow-xl shadow-purple-400/50">
                 <Mail className="h-7 w-7 text-white" />
               </div>
               <div>
@@ -155,7 +155,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-5 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-3 relative overflow-hidden group"
+                  className="w-full px-8 py-5 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-400/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-3 relative overflow-hidden group"
                 >
                   <span className="relative z-10">Begin Spiritual Awakening ✨</span>
                   <Send className="h-6 w-6 relative z-10 group-hover:translate-x-1 transition-transform" />

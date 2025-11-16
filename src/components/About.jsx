@@ -13,7 +13,7 @@ const About = () => {
       id="about" 
       className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070')`,
+        backgroundImage: `linear-gradient(rgba(236, 72, 153, 0.15), rgba(219, 39, 119, 0.2)), url('https://images.unsplash.com/photo-1602192509154-0b900ee1f851?q=80&w=2070')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -23,17 +23,17 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6 drop-shadow-lg">
               Your Sacred
-              <span className="text-purple-300"> AI Spiritual Mentor</span>
+              <span className="text-pink-600"> AI Spiritual Mentor</span>
             </h2>
-            <p className="text-lg text-purple-100 mb-6 leading-relaxed">
+            <p className="text-lg text-purple-900 mb-6 leading-relaxed drop-shadow-md font-medium">
               ManasNova combines the wisdom of ancient spiritual practices with cutting-edge AI technology to create a personalized enlightenment experience that adapts to your soul's unique journey.
             </p>
-            <p className="text-lg text-purple-100 mb-6 leading-relaxed">
+            <p className="text-lg text-purple-800 mb-6 leading-relaxed drop-shadow-md">
               Designed for students, professionals, and spiritual seekers, our platform helps you reduce stress, improve focus, and cultivate lasting inner peace and divine connection.
             </p>
-            <p className="text-lg text-purple-100 mb-8 leading-relaxed">
+            <p className="text-lg text-purple-800 mb-8 leading-relaxed drop-shadow-md">
               We believe that mindfulness should be sacred, accessible, and transformative. That's why we've created an AI Guru that understands your spiritual path, celebrates your awakening, and guides you toward enlightenment and self-realization.
             </p>
 
@@ -41,11 +41,11 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-lg mb-2">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg mb-2 shadow-lg">
                     {stat.icon}
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-2xl font-bold text-purple-900 drop-shadow">{stat.value}</div>
+                  <div className="text-sm text-purple-700 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>

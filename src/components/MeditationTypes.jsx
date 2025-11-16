@@ -178,7 +178,7 @@ const MeditationTypes = () => {
       id="meditation-types" 
       className="py-16 px-4 relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.90), rgba(31, 41, 55, 0.94)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070')`,
+        backgroundImage: `linear-gradient(rgba(249, 168, 212, 0.2), rgba(216, 180, 254, 0.25)), url('https://images.unsplash.com/photo-1545389336-cf090694435e?q=80&w=2070')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -191,23 +191,23 @@ const MeditationTypes = () => {
         {/* Header with Stats Toggle */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-4 mb-3">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Sacred <span className="text-purple-400">Spiritual Journey</span> ✨
+            <h2 className="text-4xl md:text-5xl font-bold text-purple-900 drop-shadow-lg">
+              Sacred <span className="text-pink-600">Spiritual Journey</span> ✨
             </h2>
             <button
               onClick={() => setShowStats(!showStats)}
-              className="p-2 rounded-lg bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 transition-all"
+              className="p-2 rounded-lg bg-white/80 hover:bg-white text-purple-700 transition-all shadow-lg"
               title="Toggle Stats"
             >
               <TrendingUp className="h-5 w-5" />
             </button>
           </div>
-          <p className="text-base text-purple-200 mb-4">Explore practices, disciplines, and habits for holistic growth 🕉️</p>
+          <p className="text-base text-purple-800 mb-4 drop-shadow-md font-medium">Explore practices, disciplines, and habits for holistic growth 🕉️</p>
           
           {/* Quick Stats Bar */}
           {showStats && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 max-w-4xl mx-auto">
-              <div className="bg-purple-900/40 backdrop-blur-md rounded-xl p-4 border border-purple-400/30">
+              <div className="bg-white/90 backdrop-blur-md rounded-xl p-4 border border-purple-300 shadow-lg">
                 <div className="flex items-center justify-center gap-2 mb-1">
                   <Target className="h-5 w-5 text-purple-400" />
                   <p className="text-2xl font-bold text-white">{currentStats.total}</p>
@@ -357,9 +357,9 @@ const MeditationTypes = () => {
               ];
               return (
                 <div key={item.id}
-                  className="cursor-pointer backdrop-blur-xl rounded-2xl p-5 border-2 border-purple-500/30 hover:border-purple-400 transition-all hover:shadow-2xl hover:scale-105 relative overflow-hidden group"
+                  className="cursor-pointer backdrop-blur-xl rounded-2xl p-5 border-2 border-white/50 hover:border-purple-400 transition-all hover:shadow-2xl hover:scale-105 relative overflow-hidden group"
                   style={{
-                    backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.85), rgba(31, 41, 55, 0.9)), url('${backgrounds[index % backgrounds.length]}')`,
+                    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(249, 250, 251, 0.9)), url('${backgrounds[index % backgrounds.length]}')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                   }}
@@ -369,8 +369,8 @@ const MeditationTypes = () => {
                   <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity z-20">
                     <button
                       onClick={(e) => { e.stopPropagation(); toggleSave(item); }}
-                      className={`p-1.5 rounded-lg backdrop-blur-md transition-all ${
-                        isSaved(item) ? 'bg-amber-500 text-white' : 'bg-gray-800/60 text-purple-300 hover:bg-amber-500/80'
+                      className={`p-1.5 rounded-lg backdrop-blur-md transition-all shadow-lg ${
+                        isSaved(item) ? 'bg-amber-500 text-white' : 'bg-white/90 text-purple-700 hover:bg-amber-500/80'
                       }`}
                     >
                       <Bookmark className="h-3.5 w-3.5" fill={isSaved(item) ? 'currentColor' : 'none'} />

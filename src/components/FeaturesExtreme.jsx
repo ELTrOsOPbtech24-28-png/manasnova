@@ -98,7 +98,7 @@ function FeaturesExtreme() {
       id="features" 
       className="py-24 relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.75), rgba(31, 41, 55, 0.85)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070')`,
+        backgroundImage: `linear-gradient(rgba(236, 72, 153, 0.1), rgba(168, 85, 247, 0.15)), url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=2070')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -106,26 +106,26 @@ function FeaturesExtreme() {
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary-300/20 to-zen-300/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-bl from-accent-300/20 to-calm-300/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-zen-300/15 to-primary-300/15 rounded-full blur-3xl animate-tilt"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-pink-300/30 to-purple-300/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-bl from-blue-300/30 to-indigo-300/30 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-purple-300/25 to-pink-300/25 rounded-full blur-3xl animate-tilt"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-5 py-2 bg-purple-900/40 backdrop-blur-xl rounded-full mb-4 animate-bounce-in border border-purple-400/40">
-            <Zap className="w-5 h-5 text-purple-300 animate-flicker" />
-            <span className="text-sm font-semibold text-purple-100">✨ Sacred Features</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/90 backdrop-blur-xl rounded-full mb-4 animate-bounce-in border border-purple-300 shadow-lg">
+            <Zap className="w-5 h-5 text-purple-600 animate-flicker" />
+            <span className="text-sm font-semibold text-purple-700">✨ Sacred Features</span>
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-purple-900">
             <span className="drop-shadow-lg">Everything You Need</span>
             <br />
-            <span className="text-purple-200 drop-shadow-lg">For Your Spiritual Journey</span>
+            <span className="text-pink-700 drop-shadow-lg">For Your Spiritual Journey</span>
           </h2>
           
-          <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-purple-800 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
             Comprehensive tools and AI-powered wisdom designed to help you achieve inner peace, 
             reduce stress, and awaken your highest consciousness.
           </p>
