@@ -58,14 +58,18 @@ const Testimonials = () => {
       }}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Enlightened Souls
-            <span className="text-purple-300"> Share Their Journey ✨</span>
+        {/* Section Header - Poseify Style */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center space-x-3 mb-6">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-white/40"></div>
+            <span className="section-title">TESTIMONIAL</span>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-white/40"></div>
+          </div>
+          <h2 className="heading-secondary mb-6">
+            OUR CLIENTS SAY
           </h2>
-          <p className="text-xl text-purple-100 max-w-2xl mx-auto">
-            Join thousands of awakened souls who have transformed their spiritual path with ManasNova 🕉️
+          <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Join thousands who have transformed their wellness journey with ManasNova
           </p>
         </div>
 
@@ -74,44 +78,26 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="group bg-gray-900/60 backdrop-blur-xl p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 border-2 border-purple-500/30 hover:border-purple-400/60 relative overflow-hidden transform hover:-translate-y-2"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="card p-10"
             >
-              {/* Gradient Background on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Quote Icon */}
-              <div className="absolute -top-3 -left-3 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 text-white p-4 rounded-2xl shadow-lg shadow-purple-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                <Quote className="h-7 w-7" />
-              </div>
+              {/* Testimonial Text */}
+              <p className="text-white/80 mb-8 leading-relaxed text-lg italic">
+                {testimonial.text}
+              </p>
 
-              <div className="relative z-10">
-                {/* Rating */}
-                <div className="flex space-x-1 mb-5 mt-8">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400 transform group-hover:scale-110 transition-transform" style={{ transitionDelay: `${i * 50}ms` }} />
-                  ))}
+              {/* Divider Line */}
+              <div className="h-px w-16 bg-white/30 mb-6"></div>
+
+              {/* User Info */}
+              <div className="flex items-center space-x-4">
+                <div className="text-4xl transform group-hover:scale-110 transition-transform">
+                  {testimonial.image}
                 </div>
-
-                {/* Testimonial Text */}
-                <p className="text-purple-100 mb-6 leading-relaxed text-base">
-                  "{testimonial.text}"
-                </p>
-
-                {/* User Info */}
-                <div className="flex items-center space-x-4 pt-4 border-t border-purple-500/30 group-hover:border-purple-400/60 transition-colors">
-                  <div className="text-5xl transform group-hover:scale-110 transition-transform">
-                    {testimonial.image}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-purple-100 text-lg">{testimonial.name}</h4>
-                    <p className="text-sm text-purple-200">{testimonial.role}</p>
-                  </div>
+                <div>
+                  <h4 className="font-bold text-white text-lg uppercase tracking-wide">{testimonial.name}</h4>
+                  <p className="text-sm text-white/60 uppercase tracking-wider">{testimonial.role}</p>
                 </div>
               </div>
-
-              {/* Decorative Element */}
-              <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
             </div>
           ))}
         </div>

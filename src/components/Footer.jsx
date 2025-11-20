@@ -46,7 +46,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <Sparkles className="h-8 w-8 text-primary-400" />
+              <Sparkles className="h-8 w-8 text-teal-400" />
               <span className="text-2xl font-bold text-white">ManasNova</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-sm">
@@ -55,16 +55,16 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-gray-800 hover:bg-primary-600 rounded-lg transition">
+              <a href="#" className="p-2 bg-gray-800 hover:bg-teal-600 rounded-lg transition">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-gray-800 hover:bg-primary-600 rounded-lg transition">
+              <a href="#" className="p-2 bg-gray-800 hover:bg-teal-600 rounded-lg transition">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-gray-800 hover:bg-primary-600 rounded-lg transition">
+              <a href="#" className="p-2 bg-gray-800 hover:bg-teal-600 rounded-lg transition">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-gray-800 hover:bg-primary-600 rounded-lg transition">
+              <a href="#" className="p-2 bg-gray-800 hover:bg-teal-600 rounded-lg transition">
                 <Mail className="h-5 w-5" />
               </a>
             </div>

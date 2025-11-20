@@ -16,7 +16,8 @@ const FeaturesDemo = () => {
       title: 'Sacred Meditation Timer 🧘',
       description: 'Divine guided meditation sessions with customizable durations',
       color: 'from-purple-500 to-purple-600',
-      component: MeditationTimer
+      component: MeditationTimer,
+      image: 'https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?q=80&w=800'
     },
     {
       id: 'mood',
@@ -24,7 +25,8 @@ const FeaturesDemo = () => {
       title: 'Spiritual Energy Tracker ✨',
       description: 'Track your divine emotional wellbeing and identify sacred patterns',
       color: 'from-blue-500 to-blue-600',
-      component: MoodTracker
+      component: MoodTracker,
+      image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?q=80&w=800'
     },
     {
       id: 'aiguru',
@@ -32,7 +34,8 @@ const FeaturesDemo = () => {
       title: 'AI Spiritual Guru Chat 🕉️',
       description: 'Get personalized divine guidance and enlightenment support 24/7',
       color: 'from-indigo-500 to-indigo-600',
-      component: AIGuru
+      component: AIGuru,
+      image: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=800'
     },
     {
       id: 'habits',
@@ -40,7 +43,8 @@ const FeaturesDemo = () => {
       title: 'Sacred Habit Tracker 🙏',
       description: 'Build divine positive habits and track your spiritual progress',
       color: 'from-purple-500 to-blue-600',
-      component: HabitTracker
+      component: HabitTracker,
+      image: 'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?q=80&w=800'
     },
     {
       id: 'journal',
@@ -48,7 +52,8 @@ const FeaturesDemo = () => {
       title: 'Spiritual Journal ✍️',
       description: 'Reflect and awaken with AI-powered divine prompts',
       color: 'from-purple-500 to-indigo-600',
-      component: Journal
+      component: Journal,
+      image: 'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?q=80&w=800'
     }
   ]
 
@@ -71,102 +76,68 @@ const FeaturesDemo = () => {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 px-2">
             Experience the
             <span className="text-purple-300"> Divine Power of ManasNova ✨</span>
           </h2>
-          <p className="text-xl text-purple-100 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-purple-100 max-w-2xl mx-auto px-4">
             Try our interactive sacred features and see how AI can transform your spiritual enlightenment journey 🕉️
           </p>
         </div>
 
         {/* Demo Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {demos.slice(0, 3).map((demo, index) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          {demos.map((demo) => {
             const Icon = demo.icon
-            const backgrounds = [
-              'https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?q=80&w=800', // Lotus/Meditation
-              'https://images.unsplash.com/photo-1545389336-cf090694435e?q=80&w=800', // Zen stones
-              'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=800'  // Buddha meditation
-            ];
             return (
-              <button
+              <div
                 key={demo.id}
-                onClick={() => openDemo(demo)}
-                className="group text-left p-10 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:-translate-y-3 border-2 border-purple-500/30 hover:border-purple-400/60 relative overflow-hidden"
-                style={{ 
-                  animationDelay: `${index * 0.1}s`,
-                  backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.85), rgba(31, 41, 55, 0.9)), url('${backgrounds[index]}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
+                className="group bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden cursor-pointer hover:border-purple-400 hover:shadow-purple-500/50 transition-all duration-500 hover:scale-105 hover:-translate-y-2"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-r ${demo.color} text-white mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-purple-500/50`}>
-                    <Icon className="h-10 w-10" />
+                {/* Image Section - Top Half */}
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={demo.image} 
+                    alt={demo.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
+                  
+                  {/* Icon Overlay */}
+                  <div className="absolute top-4 left-4">
+                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${demo.color} text-white shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <Icon className="h-8 w-8" />
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-purple-100 mb-3 group-hover:text-purple-50 transition-colors">
-                    {demo.title}
-                  </h3>
-                  <p className="text-purple-200 mb-6 leading-relaxed">
-                    {demo.description}
-                  </p>
-                  <span className="inline-flex items-center text-purple-300 font-semibold group-hover:text-purple-200 group-hover:gap-3 gap-2 transition-all">
-                    Try it now 
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </span>
-                </div>
-                <div className={`absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br ${demo.color} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-              </button>
-            )
-          })}
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {demos.slice(3).map((demo, index) => {
-            const Icon = demo.icon
-            const backgrounds = [
-              'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?q=80&w=800', // Prayer beads
-              'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?q=80&w=800'  // Incense spiritual
-            ];
-            return (
-              <button
-                key={demo.id}
-                onClick={() => openDemo(demo)}
-                className="group text-left p-10 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:-translate-y-3 border-2 border-purple-500/30 hover:border-purple-400/60 relative overflow-hidden"
-                style={{ 
-                  animationDelay: `${(index + 3) * 0.1}s`,
-                  backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.85), rgba(31, 41, 55, 0.9)), url('${backgrounds[index]}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <div className={`inline-flex p-5 rounded-2xl bg-gradient-to-r ${demo.color} text-white mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-purple-500/50`}>
-                    <Icon className="h-10 w-10" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-purple-100 mb-3 group-hover:text-purple-50 transition-colors">
+                  {/* Decorative blur orb */}
+                  <div className={`absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br ${demo.color} rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                </div>
+
+                {/* Content Section - Bottom Half */}
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors">
                     {demo.title}
                   </h3>
-                  <p className="text-purple-200 mb-6 leading-relaxed">
+                  <p className="text-base text-purple-200 mb-6 leading-relaxed">
                     {demo.description}
                   </p>
-                  <span className="inline-flex items-center text-purple-300 font-semibold group-hover:text-purple-200 group-hover:gap-3 gap-2 transition-all">
-                    Try it now 
+
+                  {/* Try it Now Button */}
+                  <button 
+                    onClick={() => openDemo(demo)}
+                    className={`w-full py-4 bg-gradient-to-r ${demo.color} text-white text-base font-bold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105`}
+                  >
+                    Try it Now
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </span>
+                  </button>
                 </div>
-                <div className={`absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br ${demo.color} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-              </button>
+              </div>
             )
           })}
         </div>

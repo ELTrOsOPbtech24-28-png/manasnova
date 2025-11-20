@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import NavbarExtreme from './components/NavbarExtreme'
+import Navbar from './components/Navbar'
 import ScrollProgress from './components/ScrollProgress'
 import ScrollToTop from './components/ScrollToTop'
-import HeroExtreme from './components/HeroExtreme'
-import FeaturesExtreme from './components/FeaturesExtreme'
+import Hero from './components/Hero'
+import Features from './components/Features'
 import FeaturesDemo from './components/FeaturesDemo'
 import MeditationTypes from './components/MeditationTypes'
 import About from './components/About'
@@ -11,97 +11,92 @@ import HowItWorks from './components/HowItWorks'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import OnboardingModal from './components/OnboardingModal'
-import Dashboard from './components/Dashboard'
+import RegistrationModal from './components/RegistrationModal'
+import OnboardingQuestions from './components/OnboardingQuestions'
+import UserDashboard from './components/UserDashboard'
 
 function App() {
-  const [showOnboarding, setShowOnboarding] = useState(false);
-  const [showDashboard, setShowDashboard] = useState(false);
-  const [hasUserData, setHasUserData] = useState(false);
+  const [showRegistration, setShowRegistration] = useState(false)
+  const [showOnboarding, setShowOnboarding] = useState(false)
+  const [showDashboard, setShowDashboard] = useState(false)
+  const [userData, setUserData] = useState(null)
 
   // Check if user data exists on mount
   useEffect(() => {
-    const checkUserData = () => {
-      const data = localStorage.getItem('userOnboarding');
-      setHasUserData(!!data);
-    };
-    
-    checkUserData();
-    
-    // Listen for storage changes (in case data is updated in another tab)
-    window.addEventListener('storage', checkUserData);
-    return () => window.removeEventListener('storage', checkUserData);
-  }, []);
-
-  const handleGetStarted = () => {
-    // Check if user already has data
-    const existingData = localStorage.getItem('userOnboarding');
-    if (existingData) {
-      // User already has data, show dashboard
-      setShowDashboard(true);
-    } else {
-      // No data, show onboarding
-      setShowOnboarding(true);
+    const storedData = localStorage.getItem('manasNovaUser')
+    if (storedData) {
+      const parsedData = JSON.parse(storedData)
+      setUserData(parsedData)
+      setShowDashboard(true)
     }
-  };
+  }, [])
 
-  const handleOnboardingComplete = (data) => {
-    console.log('Onboarding complete:', data);
-    setShowOnboarding(false);
-    setShowDashboard(true);
-    setHasUserData(true);
-  };
+  const handleRegisterClick = () => {
+    // Check if user already registered
+    const storedData = localStorage.getItem('manasNovaUser')
+    if (storedData) {
+      setUserData(JSON.parse(storedData))
+      setShowDashboard(true)
+    } else {
+      setShowRegistration(true)
+    }
+  }
 
-  const handleCloseDashboard = () => {
-    setShowDashboard(false);
-  };
+  const handleRegistrationSubmit = (data) => {
+    setUserData(data)
+    setShowRegistration(false)
+    setShowOnboarding(true)
+  }
 
-  const handleViewDashboard = () => {
-    setShowDashboard(true);
-  };
+  const handleOnboardingComplete = (completeData) => {
+    // Save complete user data to localStorage
+    localStorage.setItem('manasNovaUser', JSON.stringify(completeData))
+    setUserData(completeData)
+    setShowOnboarding(false)
+    setShowDashboard(true)
+  }
 
-  const handleStartOnboardingFromDashboard = () => {
-    setShowDashboard(false);
-    setShowOnboarding(true);
-  };
+  const handleBackToHome = () => {
+    setShowDashboard(false)
+  }
 
-  const handleResetData = () => {
-    // Reset all state
-    setShowDashboard(false);
-    setShowOnboarding(false);
-    setHasUserData(false);
-    
-    // Force re-check of user data
-    setTimeout(() => {
-      const data = localStorage.getItem('userOnboarding');
-      setHasUserData(!!data);
-    }, 100);
-  };
+  const handleDeleteAccount = () => {
+    localStorage.removeItem('manasNovaUser')
+    setUserData(null)
+    setShowDashboard(false)
+  }
 
-  // Show dashboard if user has completed onboarding
-  if (showDashboard) {
-    return (
-      <Dashboard 
-        onClose={handleCloseDashboard} 
-        onReset={handleResetData}
-        onStartOnboarding={handleStartOnboardingFromDashboard}
-      />
-    );
+  const handleDashboardClick = () => {
+    const storedData = localStorage.getItem('manasNovaUser')
+    if (storedData) {
+      setUserData(JSON.parse(storedData))
+      setShowDashboard(true)
+    }
+  }
+
+  // Show dashboard if user has data
+  if (showDashboard && userData) {
+    return <UserDashboard 
+      userData={userData} 
+      onBackToHome={handleBackToHome}
+      onDeleteAccount={handleDeleteAccount}
+    />
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
+    <div className="min-h-screen bg-white font-sans">
       <ScrollProgress />
       <ScrollToTop />
-      <NavbarExtreme 
-        onGetStarted={handleGetStarted}
-        onViewDashboard={handleViewDashboard}
+      <Navbar 
+        onRegisterClick={handleRegisterClick}
+        onDashboardClick={handleDashboardClick}
+        hasUserData={!!userData}
       />
       <main>
-        <HeroExtreme onGetStarted={handleGetStarted} />
+        <Hero />
+        <Features />
         <FeaturesDemo />
         <MeditationTypes />
-        <FeaturesExtreme />
         <About />
         <HowItWorks />
         <Testimonials />
@@ -109,10 +104,18 @@ function App() {
       </main>
       <Footer />
       
-      <OnboardingModal 
+      {/* Registration Modal */}
+      <RegistrationModal
+        isOpen={showRegistration}
+        onClose={() => setShowRegistration(false)}
+        onSubmit={handleRegistrationSubmit}
+      />
+
+      {/* Onboarding Questions */}
+      <OnboardingQuestions
         isOpen={showOnboarding}
-        onClose={() => setShowOnboarding(false)}
         onComplete={handleOnboardingComplete}
+        userData={userData}
       />
     </div>
   )

@@ -16,54 +16,83 @@
   button, a, [role="button"], [onclick] {
     cursor: pointer !important;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    font-weight: 700;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold shadow-lg transition-all duration-200;
+    @apply px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bold shadow-2xl transition-all duration-300 uppercase tracking-wider text-sm;
   }
   
   .btn-primary:hover {
-    @apply shadow-xl;
+    @apply shadow-2xl transform -translate-y-1 scale-105;
   }
   
-  
   .btn-secondary {
-    @apply px-8 py-4 bg-white text-gray-700 border-2 border-gray-300 rounded-lg font-semibold hover:border-purple-600 hover:text-purple-600 transition-all duration-200;
+    @apply px-10 py-5 bg-white/10 backdrop-blur-lg text-white border-2 border-white/60 rounded-full font-bold hover:bg-white/20 hover:border-white transition-all duration-300 uppercase tracking-wider text-sm;
+  }
+
+  .btn-outline {
+    @apply px-10 py-5 bg-transparent text-white border-2 border-white/80 rounded-full font-bold hover:bg-white hover:text-gray-900 transition-all duration-300 uppercase tracking-wider text-sm;
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-md transition-shadow duration-200;
+    @apply bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl transition-all duration-300 border border-white/20;
   }
 
   .card:hover {
-    @apply shadow-lg;
+    @apply shadow-2xl transform -translate-y-2 border-white/40;
   }
   
   .card-gradient {
-    @apply bg-gradient-to-br from-white to-purple-50 rounded-xl shadow-md transition-shadow duration-200;
+    @apply bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl shadow-2xl transition-all duration-300 border border-white/30;
   }
 
   .card-gradient:hover {
-    @apply shadow-lg;
+    @apply shadow-2xl transform -translate-y-2 border-white/50;
   }
   
   .glass {
-    @apply bg-white/90 backdrop-blur-md border border-gray-200 shadow-md;
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl;
   }
 
   .glass-strong {
-    @apply bg-white/80 backdrop-blur-lg border border-gray-300 shadow-lg;
+    @apply bg-white/15 backdrop-blur-2xl border border-white/30 shadow-2xl;
+  }
+
+  .section-title {
+    @apply text-sm font-bold tracking-[0.2em] uppercase text-white/60 mb-4;
+  }
+
+  .heading-primary {
+    @apply text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight;
+  }
+
+  .heading-secondary {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-zen-600 to-accent-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600;
   }
   
   .text-gradient-calm {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-calm-600 via-primary-600 to-zen-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-green-600;
   }
 
   .text-gradient-rainbow {
@@ -141,12 +170,60 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 
 .animate-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
 }

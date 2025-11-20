@@ -32,82 +32,94 @@ const Contact = () => {
       id="contact" 
       className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(167, 139, 250, 0.2), rgba(192, 132, 252, 0.25)), url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=2070')`,
+        backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.75), rgba(31, 41, 55, 0.85)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center space-x-3 mb-6">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-white/40"></div>
+            <span className="section-title">CONTACT</span>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-white/40"></div>
+          </div>
+          <h2 className="heading-secondary mb-6">
+            GET IN TOUCH
+          </h2>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Ready to transform your wellness journey? Contact us today and start your path to mindfulness.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+          {/* Left Content - Info */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6 drop-shadow-lg">
+            <h3 className="text-3xl font-bold text-white mb-6">
               Ready to Begin Your
-              <span className="text-pink-600"> Spiritual Awakening? ✨</span>
-            </h2>
-            <p className="text-lg text-purple-800 mb-8 leading-relaxed drop-shadow-md font-medium">
-              Join ManasNova today and experience divine AI-powered guidance for enlightenment, sacred focus, and spiritual self-growth. Begin your journey for free and transform your soul. 🕉️
+              <span className="block mt-2 text-white/80">Wellness Journey?</span>
+            </h3>
+            <p className="text-lg text-white/70 mb-8 leading-relaxed">
+              Join ManasNova today and experience AI-powered guidance for mindfulness, focus, and self-growth. Begin your journey for free.
             </p>
 
             {/* Benefits List */}
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start space-x-3">
+            <div className="space-y-5">
+              <div className="flex items-start space-x-4">
                 <CheckCircle className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-purple-100">Divine AI Spiritual Guidance 🙏</h4>
-                  <p className="text-purple-200">Your AI Guru adapts to your soul's unique path and divine energy</p>
+                  <h4 className="font-semibold text-white text-lg">Personalized AI Guidance</h4>
+                  <p className="text-white/60">Your AI companion adapts to your unique wellness path</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-4">
                 <CheckCircle className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-purple-100">Sacred Ancient Techniques</h4>
-                  <p className="text-purple-200">Time-honored meditation and sacred mindfulness practices</p>
+                  <h4 className="font-semibold text-white text-lg">Proven Techniques</h4>
+                  <p className="text-white/60">Time-honored meditation and mindfulness practices</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-4">
                 <CheckCircle className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-purple-100">Track Your Spiritual Growth 🧘</h4>
-                  <p className="text-purple-200">Monitor your enlightenment with insightful divine analytics</p>
+                  <h4 className="font-semibold text-white text-lg">Track Your Growth</h4>
+                  <p className="text-white/60">Monitor progress with insightful analytics</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-4">
                 <CheckCircle className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-purple-100">Available 24/7</h4>
-                  <p className="text-purple-200">Your spiritual companion is always guiding your soul</p>
+                  <h4 className="font-semibold text-white text-lg">Available 24/7</h4>
+                  <p className="text-white/60">Your wellness companion is always here to guide you</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Content - Contact Form */}
-          <div className="bg-gray-900/60 backdrop-blur-xl p-10 rounded-3xl shadow-2xl border-2 border-purple-500/30 hover:border-purple-400/60 transition-all">
+          <div className="card p-10">
             <div className="flex items-center space-x-4 mb-8">
-              <div className="p-4 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 rounded-2xl shadow-xl shadow-purple-400/50">
-                <Mail className="h-7 w-7 text-white" />
+              <div className="p-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl">
+                <Mail className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h3 className="text-3xl font-bold text-purple-100">Begin Your Journey 🕉️</h3>
-                <p className="text-purple-200 mt-1">We'll guide your path shortly</p>
+                <h3 className="text-2xl font-bold text-white uppercase tracking-wide">Send Message</h3>
+                <p className="text-white/60 mt-1">We'll respond shortly</p>
               </div>
             </div>
 
             {submitted ? (
-              <div className="py-16 text-center animate-scale-in">
-                <div className="relative inline-block mb-6">
-                  <CheckCircle className="h-20 w-20 text-purple-400 mx-auto" />
-                  <div className="absolute inset-0 bg-purple-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-                </div>
-                <h4 className="text-3xl font-bold text-purple-100 mb-3">Namaste! 🙏</h4>
-                <p className="text-purple-200 text-lg">We've received your divine message and will connect with your soul soon.</p>
+              <div className="py-12 text-center">
+                <CheckCircle className="h-16 w-16 text-purple-400 mx-auto mb-4" />
+                <h4 className="text-2xl font-bold text-white mb-2">Thank You!</h4>
+                <p className="text-white/70">We've received your message and will get back to you soon.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="group">
-                  <label htmlFor="name" className="block text-sm font-semibold text-purple-200 mb-2">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-white/80 mb-2 uppercase tracking-wider">
                     Full Name *
                   </label>
                   <input
@@ -117,12 +129,12 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 border-2 border-purple-500/30 bg-gray-800/50 text-purple-100 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-400 outline-none transition-all group-hover:border-purple-400/60 placeholder-purple-300/50"
-                    placeholder="Your Sacred Name"
+                    className="w-full px-5 py-4 border border-white/20 bg-white/5 text-white rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-purple-400 outline-none transition-all placeholder-white/40 hover:bg-white/10"
+                    placeholder="Enter your name"
                   />
                 </div>
 
-                <div className="group">
+                <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-purple-200 mb-2">
                     Email Address *
                   </label>
@@ -133,14 +145,14 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 border-2 border-purple-500/30 bg-gray-800/50 text-purple-100 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-400 outline-none transition-all group-hover:border-purple-400/60 placeholder-purple-300/50"
+                    className="w-full px-5 py-4 border border-white/20 bg-white/5 text-white rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-purple-400 outline-none transition-all placeholder-white/40 hover:bg-white/10"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
-                <div className="group">
-                  <label htmlFor="message" className="block text-sm font-semibold text-purple-200 mb-2">
-                    Message (Optional)
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-white/80 mb-2 uppercase tracking-wider">
+                    Message
                   </label>
                   <textarea
                     id="message"
@@ -148,18 +160,17 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows="5"
-                    className="w-full px-5 py-4 border-2 border-purple-500/30 bg-gray-800/50 text-purple-100 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-400 outline-none transition-all resize-none group-hover:border-purple-400/60 placeholder-purple-300/50"
-                    placeholder="Share your spiritual intentions and divine goals... 🙏"
+                    className="w-full px-5 py-4 border border-white/20 bg-white/5 text-white rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-purple-400 outline-none transition-all resize-none placeholder-white/40 hover:bg-white/10"
+                    placeholder="Tell us about your wellness goals..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-5 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-400/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-3 relative overflow-hidden group"
+                  className="btn-primary w-full flex items-center justify-center space-x-3"
                 >
-                  <span className="relative z-10">Begin Spiritual Awakening ✨</span>
-                  <Send className="h-6 w-6 relative z-10 group-hover:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span>Send Message</span>
+                  <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
             )}
